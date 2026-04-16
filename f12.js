@@ -41,3 +41,4 @@ const tsv = "Start Date\tEnd Date\tCity\tCompany\tTitle\n" +
 
 copy(tsv);
 console.log("Copied. Paste into Excel.");
+
