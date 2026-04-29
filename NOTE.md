@@ -15,3 +15,22 @@ Session notes
 - Repeated DOM tweaks were abandoned because the page lacked reliable selectors.
 - Network inspection exposed `/api/favorites?pageSize=30&page=1`, which returned structured records.
 - After confirming the payload shape, extraction moved to `d.results` and DOM parsing stopped being the primary path.
+
+
+## Current State
+
+- `f12.v0.date-ok.js`
+  - DOM-based extraction baseline
+  - dates mostly reliable
+  - city extraction unstable
+
+- `f12.api.js`
+  - API-based extraction prototype
+  - uses `/api/favorites`
+  - extracts:
+    - `date_posted`
+    - `date_ends`
+    - `municipality_name`
+    - `company_name`
+    - `heading`
+  - avoids DOM parsing for core fields
