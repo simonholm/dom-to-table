@@ -1,3 +1,8 @@
+// Preserved v0 DOM baseline from the point where date extraction was reliable.
+// "date-ok" matters because city parsing kept failing on mixed presentation text
+// such as "Örebro · 24/3 - 14/4" and "Örebro/Karlskoga".
+// The project later moved toward f12.api.js for structured API extraction.
+
 let jobs = [];
 
 document.querySelectorAll("a").forEach(el => {
