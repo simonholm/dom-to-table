@@ -3,15 +3,22 @@
 F12-based extraction workspace for job listings.
 
 - `page.html`: frozen input
-- `f12.js`: browser console script
-- `latest.tsv`: last output
+- `f12.js`: historical DOM extraction script
+- `f12.api.js`: preferred API-based extraction script
+- `latest.csv`: last output
 - `NOTE.md`: debugging notes
 
 Rule: no abstraction, no expansion.
 
 ## Extraction Strategy
 
-The original workflow used DOM scraping from DevTools to extract listings into TSV/Excel. That approach was unstable on this site and is no longer the recommended default.
+The original workflow used DOM scraping from DevTools to extract listings into Excel. That approach was unstable on this site and is no longer the recommended default.
+
+Historical note:
+
+- TSV appeared during experimentation around Excel copy/paste workflows.
+- TSV was an implementation detail, not a project requirement.
+- The canonical export format is semicolon-separated CSV.
 
 Why DOM parsing was fragile:
 
