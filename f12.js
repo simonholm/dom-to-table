@@ -36,9 +36,8 @@ document.querySelectorAll("a").forEach(el => {
   jobs.push([start, end, city, company, title]);
 });
 
-const tsv = "Start Date\tEnd Date\tCity\tCompany\tTitle\n" +
-  jobs.map(r => r.join("\t")).join("\n");
+const csv = "Start Date;End Date;City;Company;Title\n" +
+  jobs.map(r => r.map(v => `"${String(v).replaceAll('"', '""')}"`).join(";")).join("\n");
 
-copy(tsv);
-console.log("Copied. Paste into Excel.");
-
+copy(csv);
+console.log("Copied semicolon-separated CSV. Paste into Excel.");
