@@ -17,16 +17,17 @@
 
   });
 
-  const tsv =
-    "Start Date\tEnd Date\tCity\tCompany\tTitle\n" +
-    jobs.map(r => r.join("\t")).join("\n");
+  const csv =
+    "Start Date;End Date;City;Company;Title\n" +
+    jobs
+      .map(r => r.map(v => `"${String(v).replaceAll('"', '""')}"`).join(";"))
+      .join("\n");
 
   console.table(jobs);
 
-  // safer than clipboard APIs
   document.body.innerHTML =
     "<pre style='white-space:pre-wrap;font-family:monospace'>" +
-    tsv.replace(/</g, "&lt;") +
+    csv.replace(/</g, "&lt;") +
     "</pre>";
 
 })();
