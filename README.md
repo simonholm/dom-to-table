@@ -14,10 +14,8 @@ Rule: no abstraction, no expansion.
 
 The original workflow used DOM scraping from DevTools to extract listings into Excel. That approach was unstable on this site and is no longer the recommended default.
 
-Historical note:
+## Export Format
 
-- TSV appeared during experimentation around Excel copy/paste workflows.
-- TSV was an implementation detail, not a project requirement.
 - The canonical export format is semicolon-separated CSV.
 
 Why DOM parsing was fragile:
