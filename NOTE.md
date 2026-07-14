@@ -37,19 +37,24 @@ Created a separate Excel export experiment instead of mutating the API baseline.
 
 Reason:
 
-- `f12.api.js` should stay focused on extraction.
+- `scripts/api.extract.js` should stay focused on extraction.
 - Excel/CSV/clipboard behavior should be tested separately.
 - This avoids losing track of which file represents the stable baseline.
 
 ## Current State
 
-- `f12.v0.date-ok.js`
+- `prototypes/dom.v0.date-ok.tsv.js`
   - DOM-based extraction baseline
   - dates mostly reliable
   - city extraction unstable
   - kept for comparison only
 
-- `f12.api.js`
+- `scripts/dom.current-csv.js`
+  - historical DOM extraction prototype
+  - keeps the later semicolon-separated CSV clipboard path
+  - useful for comparing the DOM approach against the API approach
+
+- `scripts/api.extract.js`
   - API-based extraction prototype
   - uses `/api/favorites`
   - extracts:
@@ -61,9 +66,9 @@ Reason:
   - avoids DOM parsing for core fields
   - current baseline for extraction
 
-- `f12.api.excel.js`
+- `scripts/api.excel-export.js`
   - experimental Excel-oriented export path
-  - uses the same API source as `f12.api.js`
+  - uses the same API source as `scripts/api.extract.js`
   - normalizes `2650-*` end dates to `tills vidare`
   - downloads `jobs.csv` instead of relying on the clipboard
   - prepends a UTF-8 BOM to reduce Swedish character corruption in Excel

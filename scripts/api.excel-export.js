@@ -1,10 +1,10 @@
-// f12.api.excel.js
+// scripts/api.excel-export.js
 // Experimental Excel-oriented export path.
 //
 // Purpose:
 // - Keep Excel export separate from the API extraction baseline.
 // - Avoid DevTools clipboard/focus problems.
-// - Preserve f12.api.js as the simpler extraction prototype.
+// - Preserve scripts/api.extract.js as the simpler extraction prototype.
 //
 // Usage:
 // 1. Open the relevant page in the browser.
